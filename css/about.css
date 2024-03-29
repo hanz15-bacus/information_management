@@ -1,0 +1,22 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url('shopping-bag-cart.avif');
+}
+
+header {
+    text-align: center;  
+    width: 100%;
+    background-color: lightblue; 
+    height: 50px;
+    top: 10%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+   
+}
+.about-container{
+    border: 5px solid black;
+    width:max-content;
+    height:min-content;
+}
