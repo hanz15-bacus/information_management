@@ -19,10 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('username is required.'); window.location.href = '../index.php';</script>";
         exit();
     }
-
-
-
-    
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
    
@@ -57,13 +53,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         
         if (password_verify($password, $hashed_password)) {
-            // Password is correct, allow login
+            // kung sakto password, allow log in
             $_SESSION['username'] = $username;
             
             echo "<script>alert('You are now Logged In'); window.location.href = '../nextPage.php';</script>";
             exit();
         } else {
-            // Password is incorrect
+            // Password is incorrect, don't allow
+             $_SESSION['username'] = $username;
             echo "<script>alert('Incorrect password.'); window.location.href = '../index.php';</script>";
             exit();
         }

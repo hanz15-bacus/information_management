@@ -1,5 +1,6 @@
 <?php
    include 'connect.php';
+$acctid=$_GET['updateid'];
 
 if(isset($_POST['submit'])){
     $acctid = $_POST['acctid'];
@@ -7,19 +8,14 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql= "insert into tbuseraccount (acctid, emailadd, username, password)
-          values('$acctid', '$emailadd', '$username', '$password')";
+    $sql= "update tbuseraccount set acctid='$acctid', username = '$username', emailadd = '$emailadd', username = '$username', password = '$password'";
     $result= mysqli_query($connection, $sql);
-
+    if($result){
+        echo '<script>alert("Updated Successfully"); window.location.href = "index.php";</script>';
+    }else{
+        die(mysqli_error($connection));
+    }
     
-      echo '<script>';
-      echo 'if (' . $result . ') {';
-      echo '  alert("Data inserted successfully.");';
-      echo '  window.location.href = "home.php";'; 
-      echo '} else {';
-      echo '  alert("Data is unqualified.");';
-      echo '}';
-      echo '</script>';
 
 }
 ?>
@@ -56,14 +52,14 @@ if(isset($_POST['submit'])){
           <input type="text" class="form-control" placeholder="Enter email" name = "username" autocomplete="off">
         </div>
 
-        <div class="form-group">
+        <div class="form-group">    
           <label>Password</label>
           <input type="password" class="form-control" placeholder="Enter password" name = "password" autocomplete="off">
         </div>
 
    
    
-        <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
+        <button type="submit" class="btn btn-primary" name = "submit">Update</button>
 </form>
     </div>
 

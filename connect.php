@@ -1,5 +1,5 @@
 <?php
-    $connection = new mysqli('localhost', 'root', '', 'F2Bacus');
+    $connection = new mysqli('localhost', 'root', '', 'f2bacus');
 
     if(!$connection){
         die (mysqli_error($mysqli));
