@@ -10,53 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-      
-      form {
-		width: 300px;
-		padding: 20px;
-		border-radius: 10px;
-		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-		animation: float 3s ease-in-out infinite;
-		margin: 0 auto; /* Add this line to center the form */
-}
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #45a049;
-            font-size: 16px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #45a049;
-            font-size: 16px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #45a049;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        button:hover {
-            background-color: #357a38;
-        }
-
-    </style>
+  
 </head>
 <body>
     <div class="container">
