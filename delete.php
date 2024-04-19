@@ -8,7 +8,7 @@
         $result = mysqli_query($connection, $sql);
 
         if($result){
-            echo '<script>alert("Deleted Successfully"); window.location.href = "index.php";</script>';
+            echo '<script>alert("Deleted Successfully"); window.location.href = "home.php";</script>';
         } else {
             die(mysqli_error($connection));
         }

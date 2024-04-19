@@ -1,0 +1,43 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.container-fluid {
+  padding: 20px;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Table Styles */
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Formatted Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
