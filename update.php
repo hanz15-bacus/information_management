@@ -8,7 +8,7 @@ if(isset($_POST[ 'submit'])){
     $password = $_POST['password'];
 
     $sql= "update tbuseraccount set username = '$username', emailadd = '$emailadd', username = '$username', password = '$password'";
-    $result= mysqli_query($connection, $sql);
+    $result= mysqli_query($connection, $sql); 
     if($result){
 
         echo '<script>alert("Updated Successfully"); window.location.href = "../home.php";</script>';
@@ -52,15 +52,8 @@ if(isset($_POST[ 'submit'])){
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required autocomplete="off">
           </div>
-    <div class = "container my-5">
-    <form method = "post">
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="Enter email" name = "emailadd" autocomplete="off">
-        </div>
 
-
-          <div class="form-group">
+      <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required autocomplete="off">
           </div>
@@ -68,7 +61,7 @@ if(isset($_POST[ 'submit'])){
           <button type="submit" class="btn btn-primary" name="submit">Update</button>
         </form>
       </div>
-    </div>
+   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
