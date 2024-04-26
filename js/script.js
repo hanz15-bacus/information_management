@@ -1,15 +1,3 @@
-function togglePassword() {
-    var passwordInput = document.getElementById("password");
-    var passwordToggle = document.getElementById("password-toggle");
-
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        passwordToggle.innerHTML = "&#128526;"; 
-    } else {
-        passwordInput.type = "password";
-        passwordToggle.innerHTML = "&#128522;"; 
-    }
-}
 
 
 //FOR THE INDEX.PHP
@@ -56,40 +44,6 @@ function togglePassword() {
       nav.classList.remove('nav-active');
     });
     navItem.classList.add('nav-active');
-  }
-  
-  function changeMenu(context) {
-    const title = document.querySelector('.title');
-  
-    switch (context) {
-      case 'canned goods':
-        title.innerText = 'Canned Goods';
-        toggleMenu();
-        addActiveClass(context);
-        break;
-      case 'snackers':
-        title.innerText = 'Snackers';
-        toggleMenu();
-        addActiveClass(context);
-        break;
-      case 'sacked goods':
-        title.innerText = 'Sacked Goods';
-        toggleMenu();
-        addActiveClass(context);
-        break;
-      case 'grooming products':
-        title.innerText = 'Grooming Products';
-        toggleMenu();
-        addActiveClass(context);
-        break;
-      case 'and many more':
-        title.innerText = 'And Many More';
-        toggleMenu();
-        addActiveClass(context);
-        break;
-      default:
-        break;
-    }
   }
   
   const navItems = document.querySelectorAll('.menu-icon');
