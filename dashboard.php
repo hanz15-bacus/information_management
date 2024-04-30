@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./includes/register.php">Home</a>
+                <a class="nav-link" href="../index.php">Home</a>
             </li> 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

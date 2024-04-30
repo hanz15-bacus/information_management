@@ -1,0 +1,29 @@
+
+body {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+  h1 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+#container{
+    right: 50%;
+}
+
+.btn-primary{
+  margin-bottom: 10px;
+  width: 100%;
+}

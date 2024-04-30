@@ -74,32 +74,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <title>Login and Register</title>
   
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ShopWise</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="header">
-      
-    <a href="Products"><u>Products</u></a>
-    <a href="Solutions"><u>Solutions</u></a>
-    <a href="Developers"><u>Developers</u></a>
-    <a href="Resources"><u>Resources</u></a>
-    <a href="Pricing"><u>Pricing</u></a>
-    <a href="Contact sales"><u>Contact sales</u></a>
-    <a href="Sign in"><u>Hot Sale</u></a>
-</div>
-<div class="container">
-    <form action="./includes/login.php" method="post" id="loginRegisterForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-
-        <button type="submit" class="login-button">Log in</button>
-        <button type="submit" formaction="./includes/register.php" class="register-button">Register</button>
-    </form>
-</div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">Home</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Reports</a>
+                    <a class="dropdown-item" href="#">FAQs</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Feedbacks</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+</body>
+</html>

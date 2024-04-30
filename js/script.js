@@ -14,7 +14,10 @@
 //     el.classList.add('open-menu');
 //   }
 // }
-
+function registerFormSubmit() {
+  document.forms[0].action = "./includes/register.php";
+  document.forms[0].submit();
+}
 (function () {
     // document.querySelector('.menu').style.bottom = '-10%';
     const el = document.querySelector('.menu');

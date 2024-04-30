@@ -9,7 +9,7 @@
             <h1 style="font-family: 'Quicksand', sans-serif;">ABOUT US</h1>
         </header>
         <div class = "about-container">
-            <p>HI I AM ABOUT</p>
+            <p>HI I AM ABOUT lgo in naka</p>
         </div>
     </body>
 </html>
