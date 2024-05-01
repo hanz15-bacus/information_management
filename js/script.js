@@ -1,83 +1,39 @@
+const initSlider = () => {
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+  const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+  const scrollbarThumb = document.querySelector(".slider-scrollbar .scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
+  // Add horizontal scroll
+  imageList.style.overflowX = "scroll";
+  imageList.style.scrollBehavior = "smooth";
 
-//FOR THE INDEX.PHP
+  //slide images based on button clicks
+  slideButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const direction = button.id === "prev-slide" ? -1 : 1;
+      const scrollAmount = imageList.clientWidth * direction;
+      imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  });
 
-// function openMenu() {
-//   const el = document.querySelector('.menu');
-//   if (el.classList.contains('close-menu')) {
-//     el.classList.remove('close-menu');
-//     el.classList.add('open-menu');
-//   } else if (el.classList.contains('open-menu')) {
-//     el.classList.add('close-menu');
-//     el.classList.remove('open-menu');
-//   } else {
-//     el.classList.add('open-menu');
-//   }
-// }
-function registerFormSubmit() {
-  document.forms[0].action = "./includes/register.php";
-  document.forms[0].submit();
+  const handleSlideButtons = () => {
+    slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "block";
+    slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "block";
+  }
+
+  // Update scrollbar thumb position based on image scroll
+  const updateScrollThumbPosition = () => {
+    const scrollPosition = imageList.scrollLeft;
+    const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+    scrollbarThumb.style.left = `${thumbPosition}px`;
+  }
+
+  imageList.addEventListener("scroll", () => {
+    handleSlideButtons();
+    updateScrollThumbPosition();
+  });
 }
-(function () {
-    // document.querySelector('.menu').style.bottom = '-10%';
-    const el = document.querySelector('.menu');
-    el.style.bottom = '-10%';
-    el.style.opacity = '0';
-  })();
-  
-  function toggleMenu() {
-    const el = document.querySelector('.menu');
-    if (el.style.bottom == '-10%') {
-      el.style.bottom = '100px';
-      el.style.opacity = '1';
-      document.querySelector('.toggle__menu-open').style.opacity = '0';
-      document.querySelector('.toggle__menu-close').style.opacity = '1';
-    } else {
-      el.style.bottom = '-10%';
-      el.style.opacity = '0';
-      document.querySelector('.toggle__menu-open').style.opacity = '1';
-      document.querySelector('.toggle__menu-close').style.opacity = '0';
-    }
-  }
-  
-  function addActiveClass(context) {
-    const navItems = document.querySelectorAll('.menu-icon');
-    const navItem = document.getElementById(context);
-    navItems.forEach((nav) => {
-      nav.classList.remove('nav-active');
-    });
-    navItem.classList.add('nav-active');
-  }
-  
-  const navItems = document.querySelectorAll('.menu-icon');
-  
-  const toolTips = document.querySelectorAll('.tooltip');
-  
-  function addToolTip(key) {
-    removeTooltips();
-    toolTips.forEach((tooltip) => {
-      if (tooltip.getAttribute('data-key') == key) {
-        tooltip.style.opacity = '1';
-      }
-    });
-  }
-  
-  function removeTooltips() {
-    toolTips.forEach((tooltip) => {
-      tooltip.style.opacity = '0';
-    });
-  }
-  
-  navItems.forEach((item) => {
-    item.addEventListener('mouseover', () => {
-      addToolTip(item.getAttribute('id'));
-    });
-  });
-  
-  navItems.forEach((item) => {
-    item.addEventListener('mouseleave', () => {
-      removeTooltips();
-    });
-  });
 
-
+window.addEventListener("load", initSlider);
