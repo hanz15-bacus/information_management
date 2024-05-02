@@ -117,12 +117,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 </nav>
 
-    <div class="container1">
-    <h2>This is a container</h2>
-    <p>This container has some text inside it.</p>
-    </div>
+
 
     <div class="container">
+    <div class="container1">
+    <div class="inside-con">
+        hi i am container
+    </div>
+</div>
     <h1>CATEGORIES</h1>
         <div class="slider-wrapper">
             <button id = "prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>

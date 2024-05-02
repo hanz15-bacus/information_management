@@ -12,16 +12,10 @@ body{
     background: #F1F4FD;
 }
 .parent {
-    position: relative; /* establish a new context for positioning */
+    position: relative; 
   }
   
-  .container1 {
-    position: absolute; /* position relative to the nearest positioned ancestor */
-    top: 0; /* move up to the top of the parent */
-    left: 0; /* align to the left of the parent */
-    width: 100%; /* take up the full width of the parent */
-    align-items: center;
-  }
+
 .navbar-expand-lg {
     position: fixed;
     top: 0;
