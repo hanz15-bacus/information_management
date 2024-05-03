@@ -14,13 +14,13 @@ if(isset($_GET['updateid']) && !empty($_GET['updateid'])) {
         $result = mysqli_query($connection, $sql); 
 
         if($result){
-            echo '<script>alert("Updated Successfully"); window.location.href = "../home.php";</script>';
+            echo '<script>alert("Updated Successfully"); window.location.href = "../index.php";</script>';
         } else {
             echo '<script>alert("Failed to update: '. mysqli_error($connection) .'");</script>';
         }
     }
 } else {
-    echo '<script>alert("Update ID is missing."); window.location.href = "../home.php";</script>';
+    echo '<script>alert("Update ID is missing."); window.location.href = "../update.php";</script>';
 }
 
 ?>

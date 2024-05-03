@@ -24,7 +24,7 @@
 
                
                 if($stmt->num_rows == 1) {
-                    header("Location: ./includes/login.php");
+                    header("Location: ../includes/home.php");
                     exit();
                 } else {
                     $error = "Invalid email or password. Please try again.";
@@ -44,7 +44,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopWise</title>;
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
@@ -61,11 +61,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="../dashboard.php">Dashboard</a>
+                <a class="nav-link" href="../includes/home.php">Log in as Guest</a>
             </li> 
-            <li class="nav-item">
-                <a class="nav-link" href="../includes/login.php">Log in as Guest</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     More
@@ -101,12 +98,12 @@
             </div>
 
             <button type="submit" class="btn btn-primary" name="submit">Log In</button>
-            <a type="button" class="btn btn-primary" href= "../includes/register.php">Register</a>
+            <a type="button" class="btn btn-primary btn-green" href= "../includes/register.php">Register</a>
             
 
             <?php
                 // Display error message if set
-                if(isset($error)) {
+                if(isset($error)) { 
                     echo '<div class="alert alert-danger mt-3" role="alert">'.$error.'</div>';
                 }
             ?>
