@@ -124,6 +124,43 @@ require_once __DIR__ . '../connect.php';
 </div>
 
 
+<!--sdnasd-->
+<div class="container-fluid">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Order ID</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $sql = "SELECT * FROM tblorder_items";
+                $result = mysqli_query($connection, $sql);
+
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<tr>
+                          <td>' . $row['quantity'] . '</td>
+                          <td>' . $row['price'] . '</td>
+                          <td>' . $row['item'] . '</td>
+                          <td>' . $row['order_id'] . '</td>
+                        </tr>';
+                    }
+                } else {
+                    echo "Error: " . mysqli_error($connection);
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
