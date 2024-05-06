@@ -1,44 +1,36 @@
 <?php
 session_start();
-
-// Include connection file with proper path
 require_once __DIR__ . '/connect.php';
 
-// Process checkout form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize user input
     if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
     $username = filter_var($_SESSION['username'], FILTER_SANITIZE_STRING);
 } else {
-    // Handle the case when the 'username' key is not set or is null
+    
 }
 
     $total_price = 0;
-    $cart_items = $_SESSION['cart']?? []; // Initialize with empty array if not set
+    $cart_items = $_SESSION['cart']?? []; 
 
-    // Calculate total price
+ 
     foreach ($cart_items as $item) {
         $total_price += $item['price'] * $item['quantity'];
     }
 
     // Insert order into database
-    $stmt = $connection->prepare("INSERT INTO checkout1 (username, total_price) VALUES (?,?)");
+    $stmt = $connection->prepare("INSERT INTO tblcheckout1 (username, total_price) VALUES (?,?)");
     if ($stmt === false) {
-        // Print an error message if the statement could not be prepared
         echo "Error preparing statement: " . $connection->error;
     } else {
         $stmt->bind_param("sd", $username, $total_price);
         $stmt->execute();
 
-        // Check if the INSERT statement was successful
         if ($connection->affected_rows == 1) {
             $order_id = $connection->insert_id;
 
-            // Insert order items into database
             foreach ($cart_items as $item) {
-                $stmt = $connection->prepare("INSERT INTO checkout_items (order_id, product_code, quantity, price) VALUES (?,?,?,?)");
+                $stmt = $connection->prepare("INSERT INTO tblcheckout1 (order_id, product_code, quantity, price) VALUES (?,?,?,?)");
                 if ($stmt === false) {
-                    // Print an error message if the statement could not be prepared
                     echo "Error preparing statement: " . $connection->error;
                     break;
                 }
@@ -47,15 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute();
             }
 
-            // Clear cart session
             unset($_SESSION['cart']);
 
-            // Redirect to thank you page
-            header('Location: https://example.com/thankyou.php'); // absolute URL
+            header('Location: https://example.com/thankyou.php'); 
             exit();
         } else {
-            // Print an error message if the INSERT statement was not successful
-            echo "Error inserting order into database.";
+            echo "<script>alert('Error inserting order into database.'); window.location.href = '../includes/home.php';</script>";
+          
         }
 
         $stmt->close();
@@ -65,8 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-<!-- HTML remains the same -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tbody>
                     <?php
                     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-                        // Initialize the cart as an empty array if it is not defined or is empty
                         $_SESSION['cart'] = [];
                     }
                     

@@ -20,23 +20,21 @@
     <h1>Jewelry Section</h1>
     <div class="jewelry-item">
       <div class="item-details">
-        <img src="../images/jewelry1.jpg" alt="Jewelry 1" aria-label="Gold Necklace">
-        <h2>Gold Necklace</h2>
+        <a href = "../checkout.php"><img src="../images/jewelry1.jpg" alt="Jewelry 1" aria-label="Gold Necklace"></a>
+        <a href = "../checkout.php"><h2>Gold Necklace</h2></a>
         <p>Beautiful gold necklace with intricate design.</p>
       </div>
       <div class="item-details">
-        <img src="../images/jewelry2.webp" alt="Jewelry 2" aria-label="Silver Bracelet">
-        <h2>Silver Bracelet</h2>
+      <a href = "../checkout.php"><img src="../images/jewelry2.webp" alt="Jewelry 2" aria-label="Silver Bracelet"></a>
+      <a href = "../checkout.php"><h2>Silver Bracelet</h2></a>
         <p>Elegant silver bracelet with sparkling diamonds.</p>
       </div>
       <div class="item-details">
-        <img src="../images/jewelry3.jpg" alt="Jewelry 3" aria-label="Diamond Ring">
-        <h2>Diamond Ring</h2>
+      <a href = "../checkout.php"><img src="../images/jewelry3.jpg" alt="Jewelry 3" aria-label="Diamond Ring"></a>
+      <a href = "../checkout.php"><h2>Diamond Ring</h2></a>
         <p>Exquisite diamond ring for special occasions.</p>
       </div>
-      <!-- Add more items as needed -->
     </div>
   </div>
-    <a href = "../checkout.php"><h1>jewelry</h1></a>
 </body>
 </html>
