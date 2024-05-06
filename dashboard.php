@@ -1,5 +1,55 @@
 <?php
-    include 'connect.php'
+session_start();
+require_once __DIR__ . '../connect.php';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+            $username = filter_var($_SESSION['username'], FILTER_SANITIZE_STRING);
+        } else {
+        
+        }
+    
+        $total_price = 0;
+        $cart_items = $_SESSION['cart'] ?? [];
+    
+        foreach ($cart_items as $item) {
+            $total_price += $item['price'] * $item['quantity'];
+        }
+    
+    
+        $stmt = $connection->prepare("INSERT INTO tblorder (username, total_price) VALUES (?,?)");
+        if ($stmt === false) {
+            echo "Error preparing statement: " . $connection->error;
+        } else {
+            $stmt->bind_param("sd", $username, $total_price);
+            $stmt->execute();
+    
+            if ($connection->affected_rows == 1) {
+                $order_id = $connection->insert_id;
+    
+                foreach ($cart_items as $item) {
+                    $stmt = $connection->prepare("INSERT INTO tblorder_items (order_id, product_code, quantity, price) VALUES (?,?,?,?)");
+                    if ($stmt === false) {
+                        echo "Error preparing statement: " . $connection->error;
+                        break;
+                    }
+    
+                    $stmt->bind_param("isii", $order_id, $item['code'], $item['quantity'], $item['price']);
+                    $stmt->execute();
+                }
+    
+                unset($_SESSION['cart']);
+                echo "<script>alert('Thank you.'); window.location.href = '../index.php';</script>";
+                exit();
+            } else {
+                echo "<script>alert('Error inserting order into database.'); window.location.href = '../includes/home.php';</script>";
+            }
+    
+            $stmt->close();
+        }
+    
+        $connection->close();
+    }
  ?>
 
 <!DOCTYPE html>
@@ -73,8 +123,8 @@
     </div>
 </div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>

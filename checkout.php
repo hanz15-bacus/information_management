@@ -1,59 +1,6 @@
 <?php
-session_start();
-require_once __DIR__ . '/connect.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-    $username = filter_var($_SESSION['username'], FILTER_SANITIZE_STRING);
-} else {
-    
-}
-
-    $total_price = 0;
-    $cart_items = $_SESSION['cart']?? []; 
-
- 
-    foreach ($cart_items as $item) {
-        $total_price += $item['price'] * $item['quantity'];
-    }
-
-    // Insert order into database
-    $stmt = $connection->prepare("INSERT INTO tblcheckout1 (username, total_price) VALUES (?,?)");
-    if ($stmt === false) {
-        echo "Error preparing statement: " . $connection->error;
-    } else {
-        $stmt->bind_param("sd", $username, $total_price);
-        $stmt->execute();
-
-        if ($connection->affected_rows == 1) {
-            $order_id = $connection->insert_id;
-
-            foreach ($cart_items as $item) {
-                $stmt = $connection->prepare("INSERT INTO tblcheckout1 (order_id, product_code, quantity, price) VALUES (?,?,?,?)");
-                if ($stmt === false) {
-                    echo "Error preparing statement: " . $connection->error;
-                    break;
-                }
-
-                $stmt->bind_param("isii", $order_id, $item['code'], $item['quantity'], $item['price']);
-                $stmt->execute();
-            }
-
-            unset($_SESSION['cart']);
-
-            header('Location: https://example.com/thankyou.php'); 
-            exit();
-        } else {
-            echo "<script>alert('Error inserting order into database.'); window.location.href = '../includes/home.php';</script>";
-          
-        }
-
-        $stmt->close();
-    }
-
-    $connection->close();
-}
-
+   session_start();
+   require_once __DIR__ . '../connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,8 +51,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </tr>
                 </tfoot>
             </table>
-            <input type="submit" value="Place Order" class="btn btn-primary">
+        
+            <input type="submit" value="Place Order" class="btn btn-primary" name ="btnOrder">
+            <?php
+                if(isset($_POST['btnOrder'])){
+                    $place_order = $_POST['cart'];
+
+
+                    $sql1 = "INSERT INTO tblorder_items (order_id, cart) values('".$_SESSION['product_code']."', '".$place_order."')";
+                    mysqli_query($connection, $sql1);
+                }
+            ?>
         </form>
     </div>
 </body>
 </html>
+

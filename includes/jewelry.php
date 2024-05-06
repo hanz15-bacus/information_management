@@ -1,5 +1,26 @@
 <?php
-    include '../connect.php';
+include '../connect.php';
+  if(isset($_POST['submit'])) {
+      $cart_items = $_POST['item'];
+      $order_id = $_POST['order_id'];
+      $stmt = $connection->prepare("INSERT INTO tblorder_items (item, order_id) VALUES (?, ?)");
+
+  if (!$stmt) {
+    $error = "Database error: " . $connection->error;
+  } else {
+
+    $stmt->bind_param("ss", $cart_items, $order_id);
+    $result = $stmt->execute();
+
+  if (!$result) {
+    $error = "Query execution error: " . $stmt->error;
+  } else {
+    header("Location: ../includes/home.php");
+    exit();
+  }
+  }
+  $stmt->close();
+}
 ?>
 <!DOCTYPE html>
 
@@ -20,7 +41,7 @@
     <h1>Jewelry Section</h1>
     <div class="jewelry-item">
       <div class="item-details">
-        <a href = "../checkout.php"><img src="../images/jewelry1.jpg" alt="Jewelry 1" aria-label="Gold Necklace"></a>
+        <a href = "../dashboard.php"><img src="../images/jewelry1.jpg" alt="Jewelry 1" aria-label="Gold Necklace"></a>
         <a href = "../checkout.php"><h2>Gold Necklace</h2></a>
         <p>Beautiful gold necklace with intricate design.</p>
       </div>
