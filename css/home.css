@@ -40,7 +40,7 @@ body{
 .image-list1{
     display: flex;
     width: 325px;
-    height: 230px;
+    height: 300px;
     object-fit: cover;
 }
 .image-item{
@@ -107,7 +107,7 @@ body{
 }
 
 .slider-wrapper .image-list .image-item{
-    width: 325px;
+    width: 325px;   
     height: 300px;
     object-fit: cover;
 }

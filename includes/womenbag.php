@@ -1,22 +1,21 @@
 <?php
-    include 'connect.php';
+    include '../connect.php';
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/home.css">
     <!-- FONT LINK GIKAN GOGOL AND ICONS ATA -->
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src = "../js/script.js"></script>
     <title>Login and Register</title>
-    
-</head>
-
+    </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">ShopWise</a>
@@ -52,44 +51,6 @@
     </div>
     
 </nav>
-
-    <h1 class="category">CATEGORIES</h1>
-    
-    <div class="slider-wrapper">
-    <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-        <div class="image-list">
-            <a href = "../about.php"><img src="../images/sale.png" alt="img-1" class="image-item"></a>
-            <img src="../images/jewelry.jpg" alt="img-2" class="image-item">
-            <img src="../images/basketballshoes.jpg" alt="img-3" class="image-item">
-            <img src="../images/vidgame.jpg" alt="img-4" class="image-item">
-            <img src="../images/gym.jpg" alt="img-5" class="image-item">
-            <img src="../images/heels.jpg" alt="img-6" class="image-item">
-            <img src="../images/men.jpg" alt="img-7" class="image-item">
-            <img src="../images/women.jpg" alt="img-8" class="image-item">
-            <img src="../images/rolex.jpg" alt="img-9" class="image-item">
-            <img src="../images/eyeglasses.jpg" alt="img-10" class="image-item">
-            <img src="../images/mobileAccesories.jpg" alt="img-3" class="image-item">
-            <img src="../images/laptop.jpg" alt="img-4" class="image-item">
-            <img src="../images/appliances.jpg" alt="img-5" class="image-item">
-            <img src="../images/books.jpg" alt="img-5" class="image-item">
-            <img src="../images/bag.jpg" alt="img-5" class="image-item">
-            <img src="../images/babystuff.jpg" alt="img-5" class="image-item">
-            <img src="../images/womensbag.jpg" alt="img-5" class="image-item">
-            <img src="../images/furniture.webp" alt="img-5" class="image-item">
-            <img src="../images/sportsgear.jpg" alt="img-5" class="image-item">
-            <img src="../images/pet.jpg" alt="img-5" class="image-item">
-        </div>
-        <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
-    </div>
-</div>
-
-<div class="slider-scrollbar">
-    <div class="scrollbar-track">
-        <div class="scrollbar-thumb"></div>
-    </div>
-</div>
-<div class="container-wrapper">
-</div>
-
+    <h1>women bag</h1>
 </body>
 </html>

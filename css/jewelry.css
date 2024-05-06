@@ -1,0 +1,64 @@
+:root {
+    --font-family: 'Arial', sans-serif;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --item-details-background-color: #f9f9f9;
+    --item-details-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .jewelry-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .jewelry-item img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: var(--item-details-shadow);
+  }
+  
+  .jewelry-item.item-details {
+    flex: 0 1 48%;
+    padding: 20px;
+    background-color: var(--item-details-background-color);
+    border-radius: 8px;
+    box-shadow: var(--item-details-shadow);
+    margin-bottom: 20px;
+  }
+  
+  .jewelry-item.item-details h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+  }
+  
+  .jewelry-item.item-details p {
+    color: #555;
+
+  }
