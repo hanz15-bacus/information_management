@@ -86,6 +86,7 @@ require_once __DIR__ . '../connect.php';
     <div class="row justify-content-center mt-4">
         <div class="col-md-10">
             <table class="table table-bordered">
+                <h1>USERS</h1>
                 <thead>
                 <tr>
                     <th scope="col">Account ID</th>
@@ -129,6 +130,7 @@ require_once __DIR__ . '../connect.php';
     <div class="row justify-content-center mt-4">
         <div class="col-md-10">
             <table class="table table-bordered">
+            <h1>ORDERS</h1>
                 <thead>
                 <tr>
                     <th scope="col">Quantity</th>

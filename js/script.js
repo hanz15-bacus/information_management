@@ -36,25 +36,5 @@ const initSlider = () => {
 
 window.addEventListener("load", initSlider);
 
-//home.php
 
-<script>
-    $(document).ready(function() {
-        $('.image-item').click(function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            var imageId = $(this).attr('id'); // Get the ID of the clicked image
-            // AJAX request to insert order
-            $.ajax({
-                url: 'insert_order.php',
-                method: 'POST',
-                data: { image_id: imageId },
-                success: function(response) {
-                    alert("Order placed successfully!");
-                },
-                error: function(xhr, status, error) {
-                    alert("Error placing order: " + error);
-                }
-            });
-        });
-    });
-</script>
+

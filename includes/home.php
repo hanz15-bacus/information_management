@@ -77,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script     src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/home.css">
-    <!-- FONT LINK GIKAN GOGOL AND ICONS ATA -->
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src = "../js/script.js"></script>
     <title>Login and Register</title>
@@ -129,8 +128,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="image-list1">
             <a href = "jewelry.php"><img src="../images/jewelry.jpg" alt="img-2" class="image-item"></a>
             <img src="../images/basketballshoes.jpg" alt="img-3" class="image-item">
-            <img src="../images/chocolate.jpg" alt="img-4" class="image-item">
-            <img src="../images/bread.jpg" alt="img-5" class="image-item">
+            <img src="../images/rolex.jpg" alt="img-4" class="image-item">
+            <img src="../images/men.jpg" alt="img-5" class="image-item">
             <img src="../images/heels.jpg" alt="img-6" class="image-item">
         </div>
     </div>
@@ -141,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
         <div class="image-list">
             
-            <a href = "#"><img src="../images/sale.png" alt="img-1" class="image-item"></a>
+            <a href = "../includes/home.php"><img src="../images/vidgame.jpg" alt="img-1" class="image-item"></a>
             <a href = "../includes/jewelry.php"><img src="../images/jewelry.jpg" alt="img-2" class="image-item"></a>
             <a href = "../includes/basketballshoes.php"><img src="../images/basketballshoes.jpg" alt="img-3" class="image-item"></a>
             <a href = "../includes/vidgame.php"><img src="../images/vidgame.jpg" alt="img-4" class="image-item"></a>

@@ -9,9 +9,6 @@ if (isset($_POST['submit'])) {
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
-    // Retrieve username from session
-    $username = $_SESSION['username']; // Assuming you have stored the username in the session
-
     if (empty($item) || empty($price) || empty($quantity)) {
         echo '<script>alert("Must fill all needed information"); window.location.href = "../nextPage.php";</script>';
     } else {
@@ -95,7 +92,7 @@ if (isset($_POST['submit'])) {
 
           <div class="form-group">
             <label for="emailadd">PRICE</label>
-            <input type="number" class="form-control" id="emailadd" placeholder="Enter price" name="price" required autocomplete="off">
+            <input type="number" class="form-control" id="emailadd" placeholder="Enter price $" name="price" required autocomplete="off">
           </div>
 
           <div class="form-group">
