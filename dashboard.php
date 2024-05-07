@@ -86,14 +86,13 @@ require_once __DIR__ . '../connect.php';
     <div class="row justify-content-center mt-4">
         <div class="col-md-10">
             <table class="table table-bordered">
-                <h1>USERS</h1>
-                <thead>
+                <thead class="table-header">
                 <tr>
                     <th scope="col">Account ID</th>
                     <th scope="col">Email Address</th>
                     <th scope="col">Username</th>
                     <th scope="col">Password</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col" class="text-center">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -108,8 +107,8 @@ require_once __DIR__ . '../connect.php';
                           <td>' . $row['emailadd'] . '</td>
                           <td>' . $row['username'] . '</td>
                           <td>' . $row['password'] . '</td>
-                          <td>
-                            <button class="btn btn-primary mr-2"><a href="update.php?updateid='.$row['acctid'].'" class="text-light">Update</a></button>
+                          <td class="table-actions text-center">
+                            <button class="btn btn-primary"><a href="update.php?updateid='.$row['acctid'].'" class="text-light">Update</a></button>
                             <button class="btn btn-danger"><a href="delete.php?deleteid='.$row['acctid'].'" class="text-light">Delete</a></button>
                           </td>
                         </tr>';
@@ -124,19 +123,15 @@ require_once __DIR__ . '../connect.php';
     </div>
 </div>
 
-
-<!--sdnasd-->
 <div class="container-fluid">
     <div class="row justify-content-center mt-4">
         <div class="col-md-10">
             <table class="table table-bordered">
-            <h1>ORDERS</h1>
-                <thead>
+                <thead class="table-header">
                 <tr>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Item</th>
-                    <th scope="col">Order ID</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -150,7 +145,6 @@ require_once __DIR__ . '../connect.php';
                           <td>' . $row['quantity'] . '</td>
                           <td>' . $row['price'] . '</td>
                           <td>' . $row['item'] . '</td>
-                          <td>' . $row['order_id'] . '</td>
                         </tr>';
                     }
                 } else {

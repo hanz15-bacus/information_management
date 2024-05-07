@@ -97,9 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a class="nav-link" href="../index.php">Log in</a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link" href="../dashboard.php">Dashboard</a>
-            </li> 
-            <li class="nav-item">
                 <a class="nav-link" href="../checkout.php">checkout</a>
             </li>
             <li class="nav-item dropdown">
@@ -140,17 +137,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
         <div class="image-list">
             
-            <a href = "../includes/home.php"><img src="../images/vidgame.jpg" alt="img-1" class="image-item"></a>
+            <a href = "#"><img src="../images/vidgame.jpg" alt="img-1" class="image-item"></a>
             <a href = "../includes/jewelry.php"><img src="../images/jewelry.jpg" alt="img-2" class="image-item"></a>
-            <a href = "../includes/basketballshoes.php"><img src="../images/basketballshoes.jpg" alt="img-3" class="image-item"></a>
-            <a href = "../includes/vidgame.php"><img src="../images/vidgame.jpg" alt="img-4" class="image-item"></a>
-            <a href = "../includes/gym.php"><img src="../images/gym.jpg" alt="img-5" class="image-item"></a>
-            <a href = "../includes/heels.php"><img src="../images/heels.jpg" alt="img-6" class="image-item"></a>
+            <a href = "#"><img src="../images/basketballshoes.jpg" alt="img-3" class="image-item"></a>
+            <a href = "#"><img src="../images/vidgame.jpg" alt="img-4" class="image-item"></a>
+            <a href = "#"><img src="../images/gym.jpg" alt="img-5" class="image-item"></a>
+            <a href = "../includes/home.php"><img src="../images/heels.jpg" alt="img-6" class="image-item"></a>
             <a href = "../includes/men.php"><img src="../images/men.jpg" alt="img-7" class="image-item"></a>
             <a href = "../includes/women.php"><img src="../images/women.jpg" alt="img-8" class="image-item"></a>
             <a href = "../includes/rolex.php"><img src="../images/rolex.jpg" alt="img-9" class="image-item"></a>
             <a href = "../includes/eyeglass.php"><img src="../images/eyeglasses.jpg" alt="img-10" class="image-item"></a>
-            <a href = "../includes/mobileAcc.php"><img src="../images/mobileAccesories.jpg" alt="img-3" class="image-item"></a>
+            <a href = "#"><img src="../images/mobileAccesories.jpg" alt="img-3" class="image-item"></a>
             <a href = "../includes/laptop.php"><img src="../images/laptop.jpg" alt="img-4" class="image-item"></a>
             <a href = "../includes/appliances.php"><img src="../images/appliances.jpg" alt="img-5" class="image-item"></a>
             <a href = "../includes/book.php"><img src="../images/books.jpg" alt="img-5" class="image-item"></a>

@@ -1,30 +1,25 @@
 <?php
-
 session_start();
 require_once __DIR__ . '/../connect.php';
 
 if (isset($_POST['submit'])) {
-    // Retrieve form data
     $item = $_POST['item'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
 
     if (empty($item) || empty($price) || empty($quantity)) {
         echo '<script>alert("Must fill all needed information"); window.location.href = "../nextPage.php";</script>';
-    } else {
-        // Insert data into tblorder_items
+    } else {d
         $sql = "INSERT INTO tblorder_items (item, price, quantity) VALUES ('$item', '$price', '$quantity')";
         $result = mysqli_query($connection, $sql);
 
         $total_price = $quantity * $price;
 
         if ($result) {
-            // Update the price column in tblorder_items with the total price
             $sql = "UPDATE tblorder_items SET price = '$total_price' WHERE item = '$item' AND quantity = '$quantity'";
             $result = mysqli_query($connection, $sql);
 
             if ($result) {
-                // Insert data into tblorder
                 $sql = "INSERT INTO tblorder (username) VALUES ('$username')";
                 $result = mysqli_query($connection, $sql);
 
@@ -38,10 +33,7 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <head>
       <meta charset="UTF-8">
@@ -57,7 +49,6 @@ if (isset($_POST['submit'])) {
   <body>
   <div class="container">
   <h1>Jewelry Section</h1>
-  <!-- Jewelry items -->
   <div class="jewelry-item">
     <div class="item-details">
       <a href="../checkout.php"><img src="../images/jewelry1.jpg" alt="Jewelry 1" aria-label="Gold Necklace"></a>
@@ -69,17 +60,16 @@ if (isset($_POST['submit'])) {
       <a href="../checkout.php"><img src="../images/jewelry2.webp" alt="Jewelry 2" aria-label="Silver Bracelet"></a>
       <a href="../checkout.php"><h2>Silver Bracelet</h2></a>
       <p>Price: $80</p> 
-      <p>Quantity: <span id="silver-bracelet-quantity">15</span></p> 
+      <p>Quantity: <span id="silver-bracelet-quantity">10</span></p> 
     </div>
     <div class="item-details">
       <a href="../checkout.php"><img src="../images/jewelry3.jpg" alt="Jewelry 3" aria-label="Diamond Ring"></a>
       <a href="../checkout.php"><h2>Diamond Ring</h2></a>
       <p>Price: $200</p> 
-      <p>Quantity: <span id="diamond-ring-quantity">5</span></p> 
+      <p>Quantity: <span id="diamond-ring-quantity">10</span></p> 
     </div>
   </div>
 </div>
-<!--ORDER FORM-->
 
 <div class="container">
       <div class="form-container">

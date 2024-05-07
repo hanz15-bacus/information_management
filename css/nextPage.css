@@ -1,0 +1,39 @@
+   /* Custom CSS for table */
+   .table-custom {
+    font-size: 14px;
+    color: #333;
+}
+.table-custom th {
+    background-color: #f8f9fa;
+    border-top: none;
+}
+.table-custom td {
+    border-top: none;
+}
+@media (max-width: 768px) {
+   .table-custom td:nth-child(3) {
+        display: none; /* Hide the 'Item' column on small screens */
+    }
+}
+
+  /* Custom table styling */
+  .table-custom {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table-custom th,
+.table-custom td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+}
+
+.table-custom th {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #f8f9fa;
+}

@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__. '../connect.php';
 
-// Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Capture the username from the session or form data
     $username = isset($_SESSION['username'])? $_SESSION['username'] : ''; // Assuming username is stored in session
@@ -14,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $totalPrice += $subtotal;
     }
 
-    // Insert order information into tblorder
+    // Insert order information into tblorder_
     $orderQuery = "INSERT INTO tblorder (username, total_price) VALUES (?,?)";
     $stmt = $connection->prepare($orderQuery);
     $stmt->bind_param("ss", $username, $totalPrice);
@@ -36,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->execute();
 
         if (!$result) {
-            // Log or display the error
             error_log("Error inserting item: ". $stmt->error);
         }
     }

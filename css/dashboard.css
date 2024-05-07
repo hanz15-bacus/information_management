@@ -42,3 +42,20 @@ a:hover {
   text-decoration: none;
 }
 
+ /* Custom styling */
+ .table-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.table-header h1 {
+  margin: 20px 0;
+}
+
+.table th, .table td {
+  border: 1px solid #dee2e6;
+}
+
+.table-actions button {
+  margin-right: 5px;
+}
