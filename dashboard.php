@@ -129,6 +129,7 @@ require_once __DIR__ . '../connect.php';
             <table class="table table-bordered">
                 <thead class="table-header">
                 <tr>
+                    <th scope="col">User</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Item</th>
@@ -136,12 +137,13 @@ require_once __DIR__ . '../connect.php';
                 </thead>
                 <tbody>
                 <?php
-                $sql = "SELECT * FROM tblorder_items";
+                $sql = "SELECT tbuseraccount.username , quantity, price, item FROM tblorder_items, tbuseraccount Where tbuseraccount.acctid=tblorder_items.acctid";
                 $result = mysqli_query($connection, $sql);
 
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '<tr>
+                          <td>' . $row['username'] . '</td>
                           <td>' . $row['quantity'] . '</td>
                           <td>' . $row['price'] . '</td>
                           <td>' . $row['item'] . '</td>

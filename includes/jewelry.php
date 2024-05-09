@@ -9,8 +9,9 @@ if (isset($_POST['submit'])) {
 
     if (empty($item) || empty($price) || empty($quantity)) {
         echo '<script>alert("Must fill all needed information"); window.location.href = "../nextPage.php";</script>';
-    } else {d
-        $sql = "INSERT INTO tblorder_items (item, price, quantity) VALUES ('$item', '$price', '$quantity')";
+    } else {
+      $id=$_SESSION['id'];
+        $sql = "INSERT INTO tblorder_items (item, price, quantity,acctid) VALUES ('$item', '$price', '$quantity','$id')";
         $result = mysqli_query($connection, $sql);
 
         $total_price = $quantity * $price;

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'connect.php';
 
     if(isset($_POST['submit'])) {
@@ -10,20 +11,21 @@
         if (!$stmt) {
             $error = "Database error: " . $connection->error;
         } else {
-            $stmt->bind_param("ss", $email, $password);
+            $result = mysqli_query($connection, "SELECT * FROM tbuseraccount WHERE emailadd = '$email' AND password = '$password'");
 
-           
-            $result = $stmt->execute();
+          
 
             if (!$result) {
                 
                 $error = "Query execution error: " . $stmt->error;
             } else {
                 
-                $stmt->store_result();
-
+         
+            
+                $row=mysqli_fetch_assoc($result);
+                $_SESSION['id']= $row['acctid'];
+            if($row>0){
                
-                if($stmt->num_rows == 1) {
                     header("Location: ../includes/home.php");
                     exit();
                 } else {
