@@ -35,6 +35,7 @@ $result = mysqli_query($connection, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '<tr>
+                          
                           <td>' . $row['quantity'] . '</td>
                           <td>$' . $row['price'] . '</td>
                           <td>' . $row['item'] . '</td>

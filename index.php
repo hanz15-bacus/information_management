@@ -32,8 +32,6 @@
                     $error = "Invalid email or password. Please try again.";
                 }
             }
-
-            // Close the statement
             $stmt->close();
         }
     }
@@ -67,6 +65,9 @@
             </li> 
             <li class="nav-item">
                 <a class="nav-link" href="../dashboard.php">Dashboard</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="../something.php">Something</a>
             </li> 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
