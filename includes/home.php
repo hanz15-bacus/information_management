@@ -136,7 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="slider-wrapper">
     <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
         <div class="image-list">
-            
             <a href = "#"><img src="../images/vidgame.jpg" alt="img-1" class="image-item"></a>
             <a href = "../includes/jewelry.php"><img src="../images/jewelry.jpg" alt="img-2" class="image-item"></a>
             <a href = "#"><img src="../images/basketballshoes.jpg" alt="img-3" class="image-item"></a>

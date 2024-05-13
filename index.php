@@ -23,14 +23,14 @@
          
             
                 $row=mysqli_fetch_assoc($result);
-                $_SESSION['id']= $row['acctid'];
-            if($row>0){
-               
+             //   $_SESSION['username']= $row['acctid'];
+                if($row>0){
                     header("Location: ../includes/home.php");
                     exit();
                 } else {
                     $error = "Invalid email or password. Please try again.";
                 }
+                
             }
             $stmt->close();
         }
